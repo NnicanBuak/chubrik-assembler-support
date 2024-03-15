@@ -1,0 +1,68 @@
+{
+  "name": "chubrik_assembler_support",
+	"author": {"name": "Nnican", "url": "https://github.com/NnicanBuak"},
+	"displayName": "Chubrik`s Assembler support",
+	"description": "Compiler from https://github.com/GulgDev/chubrik-compiler",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.87.0"
+  },
+	"categories": [
+		"Programming Languages",
+		"Snippets",
+		"Other"
+	],
+	"files.associations": {
+		"*.cbasm": "asm",
+		"*.chubrikasm": "asm",
+		"*.chubrikassembler": "asm"
+	},
+  "activationEvents": [],
+  "main": "./extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "chubrik_assembler_support.hexdump",
+				"category": "Chubrik`s Assembler",
+				"title": "Открыть HEX представление текущего файла",
+				"shortTitle": "Hexdump текущего файла",
+				"icon": "${file-binary}"
+			},
+			{
+				"command": "chubrik_assembler_support.compile_clipboard",
+				"category": "Chubrik`s Assembler",
+				"title": "Скомпилировать текущий файл в буфер обмена",
+				"icon": "${circuit-board}"
+			},
+			{
+				"command": "chubrik_assembler_support.compile_file",
+				"category": "Chubrik`s Assembler",
+				"title": "Скомпилировать текущий файл в .txt",
+				"icon": "${circuit-board}"
+			}
+		],
+		"menus": {
+			"editor/title": [
+				{
+					"command": "chubrik_assembler_support.hexdump",
+					"group": "Chubrik`s Assembler",
+					"title": "Открыть HEX представление текущего файла"
+				}
+			]
+		}
+	},
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.87.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3",
+    "@vscode/test-cli": "^0.0.4",
+    "@vscode/test-electron": "^2.3.8"
+  }
+}
